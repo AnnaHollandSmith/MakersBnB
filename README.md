@@ -22,7 +22,10 @@ I would like to list multiple spaces
 ```
 As a signed up user with spaces listed
 So that I increase the chance of hiring out my spaces
+```
+```
 I would like to give information about the spaces I list (name, description & price per night)
+```
 ```
 As a signed up user with spaces listed
 So that I can hire out my space by date

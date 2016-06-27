@@ -2,6 +2,17 @@
 
 A web application that allows users to list spaces they have available, and to hire spaces for the night.
 
+### Team TAARK
+- Anna Holland-Smith
+- Kasia Puwalowska
+- Tim Chipperfield
+- Alistair Wye
+- Riya Pabari
+
+### Specifications
+
+Specifications can be found here: https://github.com/makersacademy/course/blob/master/lab_week/makers_bnb_specification.md
+
 ### User Stories
 
 ```

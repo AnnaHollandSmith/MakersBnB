@@ -1,3 +1,26 @@
-<form action='/spaces/new' method='get'>
-  <input type='submit' name='List a Space' value='List a Space'>
-</form>
+<html>
+  <head>
+    <title>All Spaces | TaarkBnB</title>  
+  </head>
+
+  <body>
+
+    <h1>Book a Space</h1>
+
+    <form action='/spaces/new' method='get'>
+
+      <input type='submit' name='List a Space' value='List a Space'>
+
+    </form>
+
+    <ul id='spaces'>
+      <% @spaces.each do | space | %>
+      <li>
+        <%= space.name %>
+      </li>
+      <% end %>
+    </ul>
+
+  </body>
+
+</html>

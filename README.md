@@ -1,8 +1,6 @@
 ## MakersBnB
 
-[![Build Status](https://travis-ci.org/riyapabari/MakersBnB.svg?branch=master)](https://travis-ci.org/riyapabari/MakersBnB)
-
-[![Coverage Status](https://coveralls.io/repos/github/riyapabari/MakersBnB/badge.svg?branch=master)](https://coveralls.io/github/riyapabari/MakersBnB?branch=master)
+[![Build Status](https://travis-ci.org/riyapabari/MakersBnB.svg?branch=master)](https://travis-ci.org/riyapabari/MakersBnB) [![Coverage Status](https://coveralls.io/repos/github/riyapabari/MakersBnB/badge.svg?branch=master)](https://coveralls.io/github/riyapabari/MakersBnB?branch=master)
 
 A web application that allows users to list spaces they have available, and to hire spaces for the night.
 

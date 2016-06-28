@@ -4,7 +4,7 @@
 
 A web application that allows users to list spaces they have available, and to hire spaces for the night.
 
-### Team TAARK
+## Team TAARK
 - Anna Holland-Smith
 - Kasia Puwalowska
 - Tim Chipperfield
@@ -61,4 +61,13 @@ I can only book spaces that are available
 As a signed up user
 So that I can see all available spaces
 I can still book spaces that have an unapproved booking request
+```
+
+#Additional tests to be added
+```
+Ensures that the user is redirected to a different page after signing up
+Ensures user is greeted by their email address
+Ensures that sign up can only be completed with matching passwords (using flash)
+Email is a required field
+Email is in correct format
 ```

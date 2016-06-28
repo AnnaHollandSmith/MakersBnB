@@ -9,10 +9,9 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces' do
-    space = Space.create(name: params[:name], description: params[:description], price: params[:price], user: current_user)
+    space = Space.create(name: params[:name], description: params[:description], price: params[:price], user: current_user, date_from: params[:date_from], date_to: params[:date_to])
     current_user.spaces << space
     current_user.save
     redirect to('/spaces')
   end
 end
-

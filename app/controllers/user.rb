@@ -1,5 +1,6 @@
 class MakersBnB < Sinatra::Base
   get '/' do
+    @user = User.new
     erb :'/index'
   end
 

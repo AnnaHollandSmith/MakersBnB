@@ -65,4 +65,5 @@ I can still book spaces that have an unapproved booking request
 ```
 Ensures that the user is redirected to a different page after signing up
 Ensures user is greeted by their email address
+Ensures that sign up can only be completed with matching passwords (using flash)
 ```

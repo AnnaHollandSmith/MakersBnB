@@ -4,14 +4,17 @@ require_relative 'data_mapper_setup'
 require_relative 'controllers/space'
 require_relative 'controllers/user'
 require_relative 'server'
+require_relative 'helpers'
 
 
 class MakersBnB < Sinatra::Base
-set :views, File.expand_path('../views', __FILE__)
+  
+  set :views, File.expand_path('../views', __FILE__)
 
-enable :sessions
-set :session_secret, 'super secret'
+  enable :sessions
+  set :session_secret, 'super secret'
 
-  # start the server if ruby file executed directly
+  include Helpers
+
   run! if app_file == $0
 end

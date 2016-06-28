@@ -9,12 +9,14 @@ require 'capybara/rspec'
 require 'rspec'
 require './app/models/user'
 require 'database_cleaner'
+require_relative 'helpers/session'
 
 
 
 Capybara.app = MakersBnB
 
 RSpec.configure do |config|
+  config.include SessionHelpers
   config.include Capybara::DSL
 
   config.before(:suite) do

@@ -9,7 +9,12 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces' do
-    Space.create(name: params[:name], description: params[:description], price: params[:price])
+    space = Space.create(name: params[:name], description: params[:description], price: params[:price], user: current_user)
+    current_user.spaces << space
+    current_user.save
     redirect to('/spaces')
   end
 end
+
+a chitter user has many chits
+a bnb user has many spaces

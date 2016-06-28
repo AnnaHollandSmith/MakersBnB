@@ -14,6 +14,7 @@ class User
   property :email, String
   property :password_digest, String, length: 60
 
+  has n, :spaces
 
   def password=(password)
     @password = password

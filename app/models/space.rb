@@ -10,4 +10,6 @@ class Space
   property :description, Text, required: true
   property :price, Float, required: true
 
+  belongs_to :user, required: true
+
 end

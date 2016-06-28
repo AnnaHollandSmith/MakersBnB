@@ -6,7 +6,7 @@ class MakersBnB < Sinatra::Base
   post '/new' do
     user = User.create(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
     session[:user_id] = user.id
-    redirect '/spaces/spaces'
+    redirect '/spaces'
   end
 
   helpers do

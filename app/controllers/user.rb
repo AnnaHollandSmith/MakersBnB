@@ -4,9 +4,15 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/new' do
-    user = User.create(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
-    session[:user_id] = user.id
-    redirect '/spaces'
+    @user = User.create(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
+    if @user.save
+      session[:user_id] = @user.id
+      redirect '/spaces'
+    else
+      flash.now[:notice] = 'password and confirmation do not match'
+      erb :'/index'
+
+    end
   end
 
   helpers do

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
     <title>TAARKBnB</title>
   </head>
+
   <body>
+    <% if flash[:notice] %>
+      <div id='notice'><%= flash[:notice] %></div>
+    <% end %>
     
-    <% if @current_user %>
-    Welcome, <%= @current_user.email %>
+    <% if current_user %>
+    Welcome, <%= current_user.email %>
     <% end %>
     <%= yield %>
   </body>

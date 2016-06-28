@@ -12,8 +12,23 @@ class MakersBnB < Sinatra::Base
     else
       flash.now[:notice] = 'password and confirmation do not match'
       erb :'/index'
-
     end
+  end
+
+  get '/sessions/new' do
+    erb :'/sessions/new'
+  end
+
+  post '/sessions' do
+    user = User.authenticate(params[:email], params[:password])
+    if user
+      session[:user_id] = user.id
+      redirect '/spaces'
+    else
+      #flash.now[:errors] = ['The email or password is incorrect']
+      redirect '/sessions/new'
+    end
+
   end
 
   helpers do

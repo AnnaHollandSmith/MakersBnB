@@ -60,3 +60,9 @@ As a signed up user
 So that I can see all available spaces
 I can still book spaces that have an unapproved booking request
 ```
+
+#Additional tests to be added
+```
+Ensures that the user is redirected to a different page after signing up
+Ensures user is greeted by their email address
+```

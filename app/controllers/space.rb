@@ -1,7 +1,7 @@
 class MakersBnB < Sinatra::Base
   get '/spaces' do
     @spaces = Space.all
-    erb :'spaces/spaces'
+    erb :'spaces/index'
   end
 
   get '/spaces/new' do
@@ -16,5 +16,3 @@ class MakersBnB < Sinatra::Base
   end
 end
 
-a chitter user has many chits
-a bnb user has many spaces

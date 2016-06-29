@@ -29,7 +29,7 @@ feature 'Listing spaces' do
     scenario 'can add date from and to' do
       sign_up
       list_a_space
-      expect(page).to have_content('Available From: 2016-07-20 Available To: 2016-07-21')
+      expect(page).to have_content('Available From: 2016-07-20 Available To: 2016-07-27')
     end
 
 end

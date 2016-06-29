@@ -3,14 +3,21 @@
 <title>Requests | TAARKBnB</title>
 
 </head>
+
 <body>
 
 	Your booking request has been sent.
 
-  <% @requests.each do | request | %>
+	<br>
 
-  <%= request.space_id.space.name %>
-  <!-- The above is broken -->
+	Requests I've Made:
+
+	<br>
+
+  <% @requests_made.each do | request | %>
+
+  <%= request.space.name %>
+  
 
   <% end %>
 

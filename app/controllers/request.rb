@@ -10,7 +10,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/requests' do
-    @requests = Request.all(user_id: current_user)
+    @requests_made = Request.all(user: current_user)
     erb :'requests/index'
   end
 

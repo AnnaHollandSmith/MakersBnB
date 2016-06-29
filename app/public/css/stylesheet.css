@@ -2,3 +2,11 @@ ul {
   padding-left: 0;
   list-style: none;
 }
+
+#listings {
+  align: "center";
+}
+
+body {
+  background-color: pink;
+}

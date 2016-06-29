@@ -1,0 +1,46 @@
+<html>
+
+<head>
+	<title> All Spaces | TAARKBnB </title>
+</head>
+
+<body>
+
+    <h1>
+      <%= @space.name %>
+    </h1>
+
+    <p>
+      Price per night: <%= format_price(@space.price) %>
+    </p>
+
+    <p>
+      Description: <%= @space.description %>
+    </p>
+
+    <p>
+      Book: available from <%= @space.date_from %> to <%= @space.date_to %>
+    </p>
+
+    <form action="/requests" method="post">
+
+    	<label for="date_from">
+    		Start Date:
+    		<input type="date" name="start_date" />
+    	</label>
+
+    	<label for="date_to">
+    		End Date:
+    		<input type="date" name="end_date" />
+    	</label>
+
+      <input type="hidden" name="space_id" value="<%= @space.id %>"/>
+
+      <input type="submit" value="Request to Book" />
+
+    </form>
+
+  </body>
+
+
+</html>

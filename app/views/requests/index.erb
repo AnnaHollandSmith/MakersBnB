@@ -1,0 +1,24 @@
+<head>
+
+<title>Requests | TAARKBnB</title>
+
+</head>
+
+<body>
+
+	Your booking request has been sent.
+
+	<br>
+
+	Requests I've Made:
+
+	<br>
+
+  <% @requests_made.each do | request | %>
+
+  <%= request.space.name %>
+  
+
+  <% end %>
+
+</body>

@@ -1,6 +1,3 @@
-require 'data_mapper'
-require 'dm-postgres-adapter'
-
 class Space
 
   include DataMapper::Resource
@@ -13,6 +10,8 @@ class Space
   property :date_to, Date, required: true
 
 
-  belongs_to :user, required: false
+  belongs_to :user
+
+  has n, :requests
 
 end

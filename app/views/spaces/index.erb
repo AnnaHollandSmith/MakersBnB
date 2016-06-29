@@ -20,7 +20,8 @@
 
         <% @spaces.each do | space | %>
 
-        Property Title: <%= space.name %>
+        <a href='/spaces/<%= space.id %>'><%= space.name %></a>
+
         <p>
           Description: <%= space.description %>
         </p>

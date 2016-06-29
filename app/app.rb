@@ -6,6 +6,7 @@ require_relative 'data_mapper_setup'
 require_relative 'controllers/space'
 require_relative 'controllers/user'
 require_relative 'controllers/session'
+require_relative 'controllers/request'
 require_relative 'server'
 require_relative 'helpers'
 

@@ -8,9 +8,11 @@ gem 'dm-postgres-adapter'
 gem 'database_cleaner'
 gem 'rake'
 gem 'bcrypt'
+gem 'sinatra-flash'
 
 group :test do
   gem 'rspec-sinatra'
   gem 'capybara'
   gem 'rspec'
+  gem 'coveralls', require: false
 end

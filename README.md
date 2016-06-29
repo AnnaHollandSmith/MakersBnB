@@ -65,6 +65,5 @@ I can still book spaces that have an unapproved booking request
 
 #Additional tests to be added
 ```
-Email is a required field
-Email is in correct format
+
 ```

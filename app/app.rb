@@ -10,7 +10,11 @@ require_relative 'controllers/request'
 require_relative 'server'
 require_relative 'helpers'
 
+
 class MakersBnB < Sinatra::Base
+
+  set :root, File.dirname(__FILE__)
+  set :public_folder, Proc.new { File.join(root, 'public')}
 
   include Helpers
 

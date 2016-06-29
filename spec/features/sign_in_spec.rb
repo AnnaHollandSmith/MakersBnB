@@ -10,9 +10,15 @@ feature 'User sign in' do
     expect(page).to have_content("Welcome, #{user.email}")
   end
 
-  scenario 'user can sign in from home page' do
+  scenario 'user can sign in from any page' do
     visit('/')
     click_link 'Login'
     expect(current_path).to eq('/sessions/new')
+  end
+
+  scenario 'login is not available if user is signed in' do
+    sign_in(email: user.email, password: user.password)
+    visit('/')
+    expect(page).to have_no_link('Login')
   end
 end

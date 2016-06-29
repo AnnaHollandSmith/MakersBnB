@@ -21,4 +21,9 @@ feature 'User sign in' do
     visit('/')
     expect(page).to have_no_link('Login')
   end
+
+  scenario 'non-user cannot log in, sees error message' do
+    sign_in(email: 'wrong@gmail.com', password: 'wrong')
+    expect(page).to have_content('The email or password is incorrect')
+  end
 end

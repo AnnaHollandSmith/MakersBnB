@@ -14,9 +14,11 @@ require File.join(File.dirname(__FILE__), '..', 'app/app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-require './app/models/user'
 require 'database_cleaner'
-require_relative 'helpers/session'
+
+require './app/models/user'
+require 'helpers/listings'
+require 'helpers/session'
 
 Capybara.app = MakersBnB
 
@@ -36,7 +38,6 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
-
 
   config.expect_with :rspec do |expectations|
 

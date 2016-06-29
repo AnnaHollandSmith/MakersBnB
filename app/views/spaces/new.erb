@@ -5,28 +5,59 @@
 
   <body>
 
-    <h1>List a Space</h1>
+    <div align="center">
 
-    <form action='/spaces' method='post'>
+      <h1>List a Space</h1>
 
-      <label for="name">
-        Name:
-        <input type="text" name="name"/>
-      </label>
+      <div align="center">
 
-      <label for="description">
-        Description:
-        <textarea rows="4" columns="50" name="description"></textarea>
-      </label>
+        <form action='/spaces' method='post'>
 
-      <label for="description">
-        Price:
-        <input type="text" name="price" placeholder="£" />
-      </label>
+          <label for="name">
+            <p>
+              Name:
+            </p>
+            <input type="text" name="name"/>
+          </label>
 
-      <input type="submit" value="List my Space" />
+          <label for="description">
+            <p>
+              Description:
+            </p>
+            <textarea rows="4" columns="50" name="description"></textarea>
+          </label>
 
-    </form>
+          <label for="description">
+            <p>
+              Price:
+            </p>
+            <input type="text" name="price" placeholder="£" />
+          </label>
+
+          <label for="date_from">
+            <p>
+              Available From:
+            </p>
+            <input type="date" name="date_from" />
+          </label>
+
+          <label for="date_to">
+            <p>
+              Available To:
+            </p>
+            <input type="date" name="date_to" />
+          </label>
+
+          <p>
+            <input type="submit" value="List my Space" />
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+
 
   </body>
 

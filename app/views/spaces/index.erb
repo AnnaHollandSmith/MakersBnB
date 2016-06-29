@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>All Spaces | TaarkBnB</title>
+    <link href="/stylesheet.css" type="text/css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div id="listings" align="center">
+
+      <h1>Book a Space</h1>
+
+      <form action='/spaces/new' method='get'>
+
+        <input type='submit' value="List a Space">
+
+      </form>
+
+      <ul id='spaces'>
+
+        <% @spaces.each do | space | %>
+
+        Property Title: <%= space.name %>
+        <p>
+          Description: <%= space.description %>
+        </p>
+
+        <p>
+          Price: <%= format_price(space.price) %>
+        </p>
+
+        <p>
+          Available From: <%= space.date_from %>
+        </p>
+
+        <p>
+          Available To: <%= space.date_to %>
+        </p>
+
+        -------------------------------------
+        <br />
+        <% end %>
+
+      </ul>
+
+    </div>
+
+
+  </body>
+
+</html>

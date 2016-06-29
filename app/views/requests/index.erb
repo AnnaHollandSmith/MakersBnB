@@ -7,4 +7,11 @@
 
 	Your booking request has been sent.
 
+  <% @requests.each do | request | %>
+
+  <%= request.space_id.space.name %>
+  <!-- The above is broken -->
+
+  <% end %>
+
 </body>

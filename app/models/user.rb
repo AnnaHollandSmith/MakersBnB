@@ -1,5 +1,3 @@
-require 'data_mapper'
-require 'dm-postgres-adapter'
 require 'bcrypt'
 
 class User
@@ -17,6 +15,7 @@ class User
   property :password_digest, String, length: 60
 
   has n, :spaces
+  has n, :requests
 
   def password=(password)
     @password = password

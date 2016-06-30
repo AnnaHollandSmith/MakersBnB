@@ -19,7 +19,7 @@ feature 'Making requests' do
     make_request
     expect(current_path).to eq('/requests')
     expect(page).to have_content('Your booking request has been sent')
-    expect(page).to have_content('My beautiful home not confirmed')
+    expect(page).to have_content('My beautiful home Not confirmed')
   end
 
 end

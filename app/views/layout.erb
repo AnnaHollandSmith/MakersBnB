@@ -21,13 +21,13 @@
     <% if current_user %>
       <li class='nav-content-left'><a class='nav-link' href='/spaces'>Spaces</a></li>
       <li class='nav-content-left'><a class='nav-link' href='/requests'>Requests</a></li>
-      <li class='nav-content-right'><span class='nav-link'><%= current_user.email %></span></li>
+      <li class='nav-content-right'><span class='nav-link'>Hello, <%= current_user.email %></span></li>
       <li class='nav-content-right'>
         <form method='post' action='/sessions'>
         <input type='hidden' name='_method' value='delete'>
         <input class='button-link' type='submit' value='Sign out'>
       </form></li>
-  
+
     <% end %>
 
   </ul>
@@ -37,7 +37,7 @@
       <%= flash[:notice] %>
     </div>
   <% end %>
-  
+
   <% if flash[:errors] && !flash[:errors].empty? %>
     Please refer to the following errors below:
     <ul id='errors'>
@@ -47,13 +47,10 @@
     </ul>
   <% end %>
 
-  
 
-  
+
+
 
     <%= yield %>
   </body>
 </html>
-
-
-

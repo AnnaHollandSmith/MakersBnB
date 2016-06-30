@@ -4,11 +4,9 @@ feature 'Listing spaces' do
       list_a_space
       expect(current_path).to eq('/spaces')
 
-      within 'ul#spaces' do
-        expect(page).to have_content('My beautiful home')
-        expect(page).to have_content('It has wifi')
-        expect(page).to have_content('100')
-      end
+      expect(page).to have_content('My beautiful home')
+      expect(page).to have_content('It has wifi')
+      expect(page).to have_content('£100')
     end
 
     scenario 'signed in user can list multiple spaces' do
@@ -29,7 +27,11 @@ feature 'Listing spaces' do
     scenario 'can add date from and to' do
       sign_up
       list_a_space
-      expect(page).to have_content('Available From: 2016-07-20 Available To: 2016-07-27')
+      click_link "My beautiful home"
+      expect(page).to have_content("My beautiful home")
+      expect(page).to have_content("It has wifi")
+      expect(page).to have_content("£100.00")
+      expect(page).to have_content('Available from 2016-07-20 to 2016-07-27')
     end
 
 end

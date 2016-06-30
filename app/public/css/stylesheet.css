@@ -102,6 +102,15 @@ label {
 	box-sizing: border-box;
 }
 
+.request-wrapper {
+	border: 1px #E8E8E8 solid;
+	background-color: white;
+	margin: 10px auto;
+	width: 800px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
 a {
 	text-decoration: none;
 }
@@ -209,14 +218,3 @@ a {
 .button2:focus {
 	background-color: #3e5869;
 }
-
-
-
-
-
-
-
-
-
-
-

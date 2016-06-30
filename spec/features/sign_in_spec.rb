@@ -7,7 +7,7 @@ feature 'User sign in' do
   scenario 'with correct credentials' do
     sign_in(email: user.email, password: user.password)
     expect(page.status_code).to eq(200)
-    expect(page).to have_content("Welcome, #{user.email}")
+    expect(page).to have_content("Hello, #{user.email}")
   end
 
   scenario 'user can sign in from any page' do

@@ -22,4 +22,11 @@ feature 'Making requests' do
     expect(page).to have_content('My beautiful home not confirmed')
   end
 
+  scenario 'user can see profile without having booked a space' do
+    sign_up
+    click_button 'My Profile'
+    expect(current_path).to eq('/requests')
+    expect(page).to have_content('Requests I\'ve Made')
+  end
+
 end

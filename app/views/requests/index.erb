@@ -17,8 +17,34 @@
   <% @requests_made.each do | request | %>
 
   <%= request.space.name %>
-  
 
   <% end %>
+
+  <br>
+
+  Requests I've Received:
+
+  <br>
+
+  <% @requests_received.each do | request | %>
+    <%= request.space.name %>
+      <form action='/confirmation' method='post'>
+        <input type='submit' value="See this request">
+      </form>
+    <%= request.space.date_from %>
+    <%= request.space.date_to %>
+    <%= request.approval %>
+
+     <% if @confirm_view %>
+       <form action='/approve' method='post'>
+         <input type='submit' value="Approve Request">
+       </form>
+       <form action='/deny' method='post'>
+         <input type='submit' value="Deny Request">
+       </form>
+     <% end %>
+
+  <% end %>
+
 
 </body>

@@ -8,22 +8,18 @@
 
   <body>
 
-      <h1>Book a Space</h1>
+    <h1>Book a Space</h1>
 
-      <form class='center-button'action='/spaces/new' method='get'>
-
-        <input class='button' type='submit' value="List a Space">
-
-      </form>
+    <form class='center-button'action='/spaces/new' method='get'>
+      <input class='button' type='submit' value="List a Space">
+    </form>
+    
       <br>
       <br>
 
-      <ul>
-
-        <% @spaces.each do | space | %>
+    <ul>
+      <% @spaces.each do | space | %>
         <div class='space-wrapper'>
-
-
           <a id='space-link' href='/spaces/<%= space.id %>'><%= space.name %></a>
           <br>
           <br>
@@ -31,12 +27,8 @@
           <br>
           Price per night: <%= format_price(space.price) %>
         </div>
-        <% end %>
-
-
-      </ul>
-
-
+      <% end %>
+    </ul>
 
   </body>
 

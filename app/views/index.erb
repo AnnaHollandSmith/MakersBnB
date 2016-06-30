@@ -18,23 +18,35 @@
     <div class="form-wrapper">
 
       <form action='/new' method='post'>
-        <label for='email'>
-          Email Address
-          <br>
-          <input class='text-input' name='email' type='email' value='<%= @user.email%>' required >
-        </label>
-        <label for='password'>
-          Password
-          <br>
-          <input class='text-input' name='password' type='password'>
-        </label>
-        <label for='password_confirmation'>
-          Password Confirmation
-          <br>
-          <input class='text-input' name='password_confirmation' type='password'>
-        </label>
+        <div class='required'>
+          <label for='email'>
+            Email Address
+          </label>
+          <input class='text-input' name='email' type='email' value='<%= @user.email%>' required>
+        </div>
+
         <br>
+        
+        <div class='required'>
+          <label for='password'>
+            Password
+          </label>
+          <input class='text-input' name='password' type='password' required>
+        </div>
+        
+        <br>
+        
+        <div class='required'>
+          <label for='password_confirmation'>
+            Password Confirmation
+          </label>
+          <input class='text-input' name='password_confirmation' type='password' required>
+        </div>
+
+        <br>
+        
         <input class='button' type='submit' value='Sign Up'>
+      
       </form>
 
   </div>

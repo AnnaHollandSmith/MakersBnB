@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #f5f5f5;
+  background-color: #f4f4f4;
 }
 
 h1 {
@@ -51,7 +51,7 @@ label {
 .button:hover,
 .button:active,
 .button:focus {
-	background-color: #3e5869; 
+	background-color: #3e5869;
 }
 
 .center-button {
@@ -59,23 +59,19 @@ label {
 }
 
 .space-wrapper {
-	width: 1000px;
-	height: 20px;
-	border: 2px black solid;
-	background-color: pink;
+	border: 1px #E8E8E8 solid;
+	background-color: white;
+	margin: 10px auto;
+	width: 800px;
+	padding: 10px;
+	box-sizing: border-box;
 }
 
-.space-list {
-	position: relative;
-	height: 100%;
-	width: 100%;
-	background-color: green;
+a {
+	text-decoration: none;
 }
 
-
-
-
-
-
-
-
+#space-link {
+	color: #FF8A65;
+	font-size: 20px;
+}

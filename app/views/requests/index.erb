@@ -31,9 +31,9 @@
       <form action='/confirmation/<%= request.id %>' method='get'>
         <input type='submit' value='See this request'>
       </form>
-		  <%= @request.space.date_from %>
-		  <%= @request.space.date_to %>
-		  <%= @request.approval %>
+		  <%= request.space.date_from %>
+		  <%= request.space.date_to %>
+		  <%= request.approval %>
 
   <% end %>
 

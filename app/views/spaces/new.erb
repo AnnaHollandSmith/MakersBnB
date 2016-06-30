@@ -1,60 +1,52 @@
 <html>
+
   <head>
     <title>List a Space | TaarkBnB</title>
   </head>
 
   <body>
 
-    <div align="center">
-
       <h1>List a Space</h1>
 
-      <div align="center">
+      <div class='form-wrapper2'>
 
         <form action='/spaces' method='post'>
 
           <label for="name">
-            <p>
-              Name:
-            </p>
-            <input type="text" name="name"/>
+            Name:
+            <br>
+            <input class='text-input2'type="text" name="name"/>
           </label>
-
+          <br>
           <label for="description">
-            <p>
-              Description:
-            </p>
-            <textarea rows="4" columns="50" name="description"></textarea>
+            Description:
+            <br>
+            <textarea class='textarea-input' rows="4" columns="50" name="description"></textarea>
           </label>
-
+          <br>
           <label for="description">
-            <p>
-              Price:
-            </p>
-            <input type="text" name="price" placeholder="£" />
+            Price:
+            <br>
+            <input class='text-input' type="text" name="price" placeholder="£" />
           </label>
-
+          <br>
           <label for="date_from">
-            <p>
-              Available From:
-            </p>
-            <input type="date" name="date_from" />
+            Available From:
+            <br>
+            <input class='text-input' type="date" name="date_from" />
           </label>
-
+          <br>
           <label for="date_to">
-            <p>
-              Available To:
-            </p>
-            <input type="date" name="date_to" />
+            Available To:
+            <br>
+            <input class='text-input' type="date" name="date_to" />
           </label>
 
-          <p>
-            <input type="submit" value="List my Space" />
-          </p>
+          <br>
 
+          <input class='button' type="submit" value="List my Space" />
+            
         </form>
-
-      </div>
 
     </div>
 

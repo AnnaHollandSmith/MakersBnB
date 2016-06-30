@@ -1,51 +1,34 @@
 <html>
+
   <head>
+
     <title>All Spaces | TaarkBnB</title>
-  
+
   </head>
 
   <body>
 
-    <div id="listings" align="center">
+    <h1>Book a Space</h1>
 
-      <h1>Book a Space</h1>
+    <form class='center-button'action='/spaces/new' method='get'>
+      <input class='button' type='submit' value="List a Space">
+    </form>
+    
+      <br>
+      <br>
 
-      <form action='/spaces/new' method='get'>
-
-        <input type='submit' value="List a Space">
-
-      </form>
-
-      <ul id='spaces'>
-
-        <% @spaces.each do | space | %>
-
-        <a href='/spaces/<%= space.id %>'><%= space.name %></a>
-
-        <p>
-          Description: <%= space.description %>
-        </p>
-
-        <p>
-          Price: <%= format_price(space.price) %>
-        </p>
-
-        <p>
-          Available From: <%= space.date_from %>
-        </p>
-
-        <p>
-          Available To: <%= space.date_to %>
-        </p>
-
-        -------------------------------------
-        <br />
-        <% end %>
-
-      </ul>
-
-    </div>
-
+    <ul>
+      <% @spaces.each do | space | %>
+        <div class='space-wrapper'>
+          <a id='space-link' href='/spaces/<%= space.id %>'><%= space.name %></a>
+          <br>
+          <br>
+          <%= space.description %>
+          <br>
+          Price per night: <%= format_price(space.price) %>
+        </div>
+      <% end %>
+    </ul>
 
   </body>
 

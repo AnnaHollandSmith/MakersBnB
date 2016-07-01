@@ -9,42 +9,46 @@
 	<br>
 
   <div id='requests_made_received'>
+    <h1>Requests</h1>
 
-    <div id='requests_made' class='requests'>
-    	<h1>Requests I've Made:</h1>
-    	<br>
 
-      <ul>
-        <% @requests_made.each do | request | %>
-        <div class='request-wrapper'>
-          <%= request.space.name %>
-          <br>
-          From <%= request.start_date %> to <%= request.end_date %>
-          <br>
-          Status: <%= get_request_status(request.confirmed) %>
-        </div>
-        <% end %>
-      </ul>
-
+    <div class='request_title_holder' id='made_holder'>
+      <h3>Requests I've Made:</h1>
+      <div id='requests_made' class='requests'>
+      	<br>
+        <ul>
+          <% @requests_made.each do | request | %>
+          <div class='request-wrapper'>
+            <a id='space-link' href='/spaces/<%= request.space.id %>'><%= request.space.name %></a>
+            <br>
+            From <%= request.start_date %> to <%= request.end_date %>
+            <br>
+            Status: <%= get_request_status(request.confirmed) %>
+          </div>
+          <% end %>
+        </ul>
+      </div>
     </div>
 
-    <div id='requests_received' class='requests'>
-      <h1>Requests I've Received:</h1>
-      <br>
-      <% @requests_received.each do | request | %>
-      	<div class='request-wrapper'>
-          <%= request.space.name %>
-          <br>
-    		  From <%= request.start_date %> to <%= request.end_date %>
-          <br>
-    		  Status: <%= get_request_status(request.confirmed) %>
-          <br>
-          <form action='/requests/<%= request.id %>' method='get'>
-             <input type='submit' value='See this Request'>
-          </form>
-    	  </div>
-      <% end %>
+    <div class='request_title_holder' id='received_holder'>
+      <div id='requests_received' class='requests'>
+        <h1>Requests I've Received:</h1>
+        <br>
+        <% @requests_received.each do | request | %>
+        	<div class='request-wrapper'>
+            <%= request.space.name %>
+            <br>
+      		  From <%= request.start_date %> to <%= request.end_date %>
+            <br>
+      		  Status: <%= get_request_status(request.confirmed) %>
+            <br>
+            <form action='/requests/<%= request.id %>' method='get'>
+               <input type='submit' value='See this Request'>
+            </form>
+      	  </div>
+        <% end %>
+      </div>
+
     </div>
   </div>
-
 </body>

@@ -10,6 +10,7 @@
 
     <h1>
       <%= @space.name %>
+			 <img src='/image_uploads/<%= @space.photo %>'>
     </h1>
 
     <div class='space-view'>
@@ -31,9 +32,9 @@
 
     	<label for="date_from">
     		<span class='small-text'>Start Date:</span>
-      </label>  
+      </label>
     	<input class='text-input3' type="date" name="start_date" />
-    	
+
     	<label for="date_to">
     		<span class='small-text'>End Date:</span>
       </label>

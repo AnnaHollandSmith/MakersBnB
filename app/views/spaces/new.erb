@@ -10,7 +10,7 @@
 
       <div class='form-wrapper2'>
 
-        <form action='/spaces' method='post'>
+        <form action='/spaces' method='post' enctype="multipart/form-data">
 
           <label for="name" class="required">
             Name:
@@ -49,7 +49,17 @@
             <br>
             <input class='text-input' id="date_to" type='date' name='date_to' min="<%= @tomorrow %>" required />
           </label>
+          <br>
 
+
+
+          <label for="photo">
+            Upload a photo:
+            <br>
+            <input type="file" name="photo" accept="image/*">
+          </label>
+
+          <br>
           <br>
 
           <input class='button' type="submit" value="List my Space" />

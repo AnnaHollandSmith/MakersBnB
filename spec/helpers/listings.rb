@@ -6,7 +6,6 @@ def list_a_space(name: 'My beautiful home',
 									user_id: 1)
 	visit('/spaces')
   click_button 'List a Space'
-  expect(current_path).to eq('/spaces/new')
   fill_in :name, with: name
   fill_in :description, with: description
   fill_in :price, with: price
@@ -16,17 +15,9 @@ def list_a_space(name: 'My beautiful home',
   click_button 'List my Space'
 end
 
-def make_request
-	click_link 'My beautiful home'
-	fill_in :start_date, with: Date.new(2016,07,22)
-	fill_in :end_date, with: Date.new(2016,07,23)
-	click_button 'Request to Book'
-end
-
-
-def validate_space_availability(date_from, date_to, route)
-    if date_from > date_to
-      flash.next[:errors] = ['Invalid date range!']
-      redirect(route)
-    end
-end
+  def make_request
+  	click_link 'My beautiful home'
+  	fill_in :start_date, with: Date.new(2016,07,22)
+  	fill_in :end_date, with: Date.new(2016,07,23)
+  	click_button 'Request to Book'
+  end

@@ -27,7 +27,7 @@ feature 'Listing spaces' do
 
     scenario 'can add date from and to' do
       sign_up
-      list_a_space(date_from: Date.today, date_to: Date.today+1)
+      list_a_space
       click_link "My beautiful home"
       expect(page).to have_content("My beautiful home")
       expect(page).to have_content("It has wifi")

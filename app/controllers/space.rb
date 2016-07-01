@@ -5,6 +5,8 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/spaces/new' do
+    @today = (Date.today).to_s
+    @tomorrow = (Date.today + 1).to_s
     erb :'spaces/new'
   end
 
@@ -16,6 +18,7 @@ class MakersBnB < Sinatra::Base
                          date_from: params[:date_from],
                          date_to: params[:date_to])
     redirect to('/spaces')
+    # Check whether @space or space necessary?
   end
 
   get '/spaces/:id' do

@@ -10,42 +10,41 @@
 
 	<br>
 
-	<h1>Requests I've Made</h1>
+  <div id='requests_made_received'>
 
-	<br>
-
-
-  <ul>
-    <% @requests_made.each do | request | %>
-    <div class='request-wrapper'>
-      <h3><%= request.space.name %></h3>
-      Not confirmed
+    <div id='requests_made'>
+    	<h1>Requests I've Made</h1>
+    	<br>
+      <ul>
+        <% @requests_made.each do | request | %>
+        <div class='request-wrapper'>
+          <h3><%= request.space.name %></h3>
+          Not confirmed
+        </div>
+        <% end %>
+      </ul>
     </div>
-    <% end %>
-  </ul>
 
+    <div id='requests_made'>
+      <h1>Requests I've Received:</h1>
 
-  <br>
-
-  <h1>Requests I've Received:</h1>
-
-  <br>
-  <% @requests_received.each do | request | %>
-	<div class='request-wrapper'>
-    <%= request.space.name %>
-    <br>
-		<%= request.space.date_from %>
-    <br>
-		<%= request.space.date_to %>
-    <br>
-		Status:<%= request.approval %>
-    <br>
-    <form action='/confirmation/<%= request.id %>' method='get'>
-      <input type='submit' value='See this request'>
-    </form>
-	</div>
-
-  <% end %>
-
+      <br>
+      <% @requests_received.each do | request | %>
+    	<div class='request-wrapper'>
+        <%= request.space.name %>
+        <br>
+    		<%= request.space.date_from %>
+        <br>
+    		<%= request.space.date_to %>
+        <br>
+    		Status:<%= request.approval %>
+        <br>
+        <form action='/confirmation/<%= request.id %>' method='get'>
+          <input type='submit' value='See this request'>
+        </form>
+  	  </div>
+      <% end %>
+    </div>
+  </div>
 
 </body>

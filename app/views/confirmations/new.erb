@@ -1,0 +1,10 @@
+
+  <form action='/requests/<%=request.id%>' method='post'>
+    <input type='submit' name='approve' value="Approve Request">
+    <input type='hidden' name="_method" value='put'>
+    <input type='submit' name='deny' value="Deny Request">
+  </form>
+  <%= @request.space.name %>
+  <%= @request.space.date_from %>
+  <%= @request.space.date_to %>
+  <%= @request.approval %>

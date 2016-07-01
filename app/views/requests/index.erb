@@ -13,6 +13,8 @@
 	<h1>Requests I've Made</h1>
 
 	<br>
+
+
   <ul>
     <% @requests_made.each do | request | %>
     <div class='request-wrapper'>
@@ -21,5 +23,28 @@
     </div>
     <% end %>
   </ul>
+
+
+  <br>
+
+  Requests I've Received:
+
+  <br>
+
+  <% @requests_received.each do | request | %>
+    <%= request.space.name %>
+    <br>
+		<%= request.space.date_from %>
+    <br>
+		<%= request.space.date_to %>
+    <br>
+		Status:<%= request.approval %>
+    <br>
+    <form action='/confirmation/<%= request.id %>' method='get'>
+      <input type='submit' value='See this request'>
+    </form>
+
+  <% end %>
+
 
 </body>

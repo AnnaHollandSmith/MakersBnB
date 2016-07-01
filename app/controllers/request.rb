@@ -5,13 +5,28 @@ class MakersBnB < Sinatra::Base
     request = Request.create(start_date: params[:start_date],
                              end_date: params[:end_date],
                              user_id: current_user.id,
-                             space_id: params[:space_id])
+                             space_id: params[:space_id],
+                             approval: 'Not confirmed')
     redirect('/requests')
   end
 
   get '/requests' do
     @requests_made = Request.all(user: current_user)
+    @requests_received = Request.all(space: Space.all(user: current_user))
     erb :'requests/index'
   end
+
+  get '/requests/:id' do
+    @request = Request.get(params[:id])
+    erb :'confirmation/new'
+  end
+
+  put '/requests/:id' do
+
+  end
+  post '/approve' do
+    redirect('/requests')
+  end
+
 
 end

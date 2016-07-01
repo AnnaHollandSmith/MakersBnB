@@ -1,3 +1,5 @@
+require 'mini_magick'
+
 class Space
 
   include DataMapper::Resource
@@ -11,10 +13,25 @@ class Space
   property :price, Float, required: true
   property :date_from, Date, required: true
   property :date_to, Date, required: true
+  property :photo, String
 
   belongs_to :user
 
   has n, :requests
   has n, :bookings
 
+  def self.upload_photo(filename, file_contents)
+    File.open('./app/public/image_uploads/' + filename, "w") do |f|
+      f.write(file_contents.read)
+    end
+
+    image = MiniMagick::Image.open("./app/public/image_uploads/#{filename}")
+    image.resize "200x200"
+    image.write "./app/public/image_uploads/small_#{filename}"
+
+    image = MiniMagick::Image.open("./app/public/image_uploads/#{filename}")
+    image.resize "850x850"
+    image.write "./app/public/image_uploads/#{filename}"
+
+  end
 end

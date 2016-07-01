@@ -236,6 +236,13 @@ a {
 	background-color: #3e5869;
 }
 
+.image-upload {
+	text-align: center;
+}
+
+.image-button {
+	font-size: 15px;
+
 #requests_made_received {
    position: relative;
    width: 100%;

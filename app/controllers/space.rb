@@ -16,7 +16,15 @@ class MakersBnB < Sinatra::Base
                          price: params[:price],
                          user: current_user,
                          date_from: params[:date_from],
-                         date_to: params[:date_to])
+                         date_to: params[:date_to],
+                         photo: params[:photo][:filename])
+
+    space.save
+   Space.upload_photo(params[:photo][:filename],
+                       params[:photo][:tempfile])
+
+
+
     redirect to('/spaces')
     # Check whether @space or space necessary?
   end

@@ -2,6 +2,11 @@
 	font-family: 'Indie Flower', cursive;
 }
 
+ul {
+	padding: 0;
+	list-style-type: none;
+}
+
 body {
   background-color: #f4f4f4;
   margin: 0;
@@ -248,6 +253,7 @@ a {
 
 .image-button {
 	font-size: 15px;
+}
 
 #requests_made_received {
    position: relative;

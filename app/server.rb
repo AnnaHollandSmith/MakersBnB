@@ -1,4 +1,7 @@
 class MakersBnB < Sinatra::Base
+  
+
+
   set :views, File.expand_path('../views', __FILE__)
 
 
@@ -10,4 +13,7 @@ class MakersBnB < Sinatra::Base
   register Sinatra::Flash
 
   run! if app_file == $0
+
+
+
 end

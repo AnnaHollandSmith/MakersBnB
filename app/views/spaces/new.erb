@@ -39,7 +39,7 @@
           <label for="date_from" class="required">
             Available From:
             <br>
-            <input class='text-input' type='date' name='date_from' value="<%= @space.date_from if @space %>" min="<%= @today %>" required />
+            <input class='text-input' type='date' name='date_from' min="<%= @today %>" required />
           </label>
 
           <br>
@@ -47,7 +47,7 @@
           <label for="date_to" class="required">
             Available To:
             <br>
-            <input class='text-input' type='date' name='date_to' value="<%= @space.date_to if @space %>" min="<%= @tomorrow %>" required />
+            <input class='text-input' type='date' name='date_to' min="<%= @tomorrow %>" required />
           </label>
 
           <br>

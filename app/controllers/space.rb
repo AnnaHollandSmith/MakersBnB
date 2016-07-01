@@ -11,13 +11,14 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces' do
-    @space = Space.create(name: params[:name],
+    Space.create(name: params[:name],
                          description: params[:description],
                          price: params[:price],
                          user: current_user,
                          date_from: params[:date_from],
                          date_to: params[:date_to])
     redirect to('/spaces')
+    # Check whether @space or space necessary?
   end
 
   get '/spaces/:id' do

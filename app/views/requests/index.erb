@@ -6,20 +6,19 @@
 
 <body>
 
-	Your booking request has been sent.
+
+	<h2>Requests I've Made</h2>
 
 	<br>
-
-	<h1>Requests I've Made</h1>
-
-	<br>
-
 
   <ul>
     <% @requests_made.each do | request | %>
     <div class='request-wrapper'>
-      <h3><%= request.space.name %></h3>
-      Not confirmed
+      <%= request.space.name %>
+      <br>
+      From <%= request.start_date %> to <%= request.end_date %>
+      <br>
+      Status: <%= get_request_status(request.confirmed) %>
     </div>
     <% end %>
   </ul>
@@ -27,24 +26,28 @@
 
   <br>
 
-  Requests I've Received:
+  <h2>Requests I've Received</h2>
 
   <br>
 
-  <% @requests_received.each do | request | %>
-    <%= request.space.name %>
-    <br>
-		<%= request.space.date_from %>
-    <br>
-		<%= request.space.date_to %>
-    <br>
-		Status:<%= request.approval %>
-    <br>
-    <form action='/confirmation/<%= request.id %>' method='get'>
-      <input type='submit' value='See this request'>
-    </form>
-
+  <ul>
+    <% @requests_received.each do | request | %>
+    <div class='request-wrapper'>
+      <%= request.space.name %>
+      <br>
+		  From <%= request.start_date %> to <%= request.end_date %>
+      <br>
+		  Status: <%= get_request_status(request.confirmed) %>
+      <br>
+      <form action='/requests/<%= request.id %>' method='get'>
+         <input type='submit' value='See this Request'>
+      </form>
+    </div>
   <% end %>
+
+  <ul>
 
 
 </body>
+
+

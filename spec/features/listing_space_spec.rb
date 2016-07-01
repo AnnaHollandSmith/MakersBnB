@@ -36,7 +36,7 @@ feature 'Listing spaces' do
 
     xscenario 'date from cannot be in the past when listing a space' do
       sign_up
-      list_a_space(date_from: Date.new(2016,06,29), date_to: Date.new(2016,06,30)).not_to change(Space, :count)
+      expect{ list_a_space(date_from: Date.new(2016,06,29), date_to: Date.new(2016,06,30)) }.not_to change(Space, :count)
       expect(current_path).to eq('/spaces/new')
       # TBD in code review.  Cannot get test to pass.  RSpec/Capybara insists
       # Space count is going up from 0 to 1 despite test database, when

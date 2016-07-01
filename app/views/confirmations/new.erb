@@ -1,3 +1,5 @@
+<div id='confirmation' class='requests'>
+  <h1>Confirm Pending Request</h1>
 
   <form action='/requests/<%=request.id%>' method='post'>
     <input type='submit' name='approve' value="Approve Request">
@@ -8,3 +10,4 @@
   <%= @request.space.date_from %>
   <%= @request.space.date_to %>
   <%= @request.approval %>
+<div>

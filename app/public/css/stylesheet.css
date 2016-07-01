@@ -238,28 +238,40 @@ a {
    position: relative;
    width: 100%;
    max-width: 1000px;
-   align: center;
    text-align: center;
-   margin: 150px;
+   margin-left: 10%;
+   margin-top: 0%;
+   margin-right: 10%;
+   padding: 40px;
 }
 
 #requests_received {
-  position: absolute;
-    right: 0px;
-    width: 425px;
+    right: 15px;
+    width: 475px;
     vertical-align: top;
     display: inline-block;
 }
 
 #requests_made {
-  position: absolute;
-    left: 0px;
-    width: 425px;
+    left: 15px;
+    width: 475px;
     vertical-align: top;
     display: inline-block;
 }
 
 .requests {
+    position: absolute;
     background-color: white;
     padding: 20px;
+}
+
+#confirmation {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  margin-left: 10%;
+  margin-top: 0%;
+  margin-right: 10%;
+  padding: 40px;
 }

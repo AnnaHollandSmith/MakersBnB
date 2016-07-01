@@ -17,8 +17,8 @@ class MakersBnB < Sinatra::Base
                          user: current_user,
                          date_from: params[:date_from],
                          date_to: params[:date_to])
+    validate_space_availability(params[:date_from], params[:date_to], '/spaces/new')
     redirect to('/spaces')
-    # Check whether @space or space necessary?
   end
 
   get '/spaces/:id' do

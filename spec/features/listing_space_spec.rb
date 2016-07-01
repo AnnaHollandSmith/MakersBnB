@@ -16,8 +16,8 @@ feature 'Listing spaces' do
       fill_in 'name', with: 'My ugly smelly home'
       fill_in 'description', with: 'It has no wifi but it has bugs'
       fill_in 'price', with: '1'
-      fill_in 'date_from', with: Date.new(2016,07,20)
-      fill_in 'date_to', with: Date.new(2016,07,21)
+      fill_in 'date_from', with: Date.today
+      fill_in 'date_to', with: Date.today+1
       click_button 'List my Space'
       spaces = Space.all
       expect(spaces.map(&:name)).to include("My ugly smelly home")
@@ -26,23 +26,19 @@ feature 'Listing spaces' do
 
     scenario 'can add date from and to' do
       sign_up
-      list_a_space
+      list_a_space(date_from: Date.today, date_to: Date.today+1)
       click_link "My beautiful home"
       expect(page).to have_content("My beautiful home")
       expect(page).to have_content("It has wifi")
       expect(page).to have_content("£100.00")
-      expect(page).to have_content('Available from 2016-07-20 to 2016-07-27')
+      expect(page).to have_content("Available from #{Date.today} to #{Date.today+1}")
     end
 
     xscenario 'date from cannot be in the past when listing a space' do
       sign_up
-      expect{ list_a_space(date_from: Date.new(2016,06,29), date_to: Date.new(2016,06,30)) }.not_to change(Space, :count)
+      list_a_space(date_from: Date.new(2016,06,01), date_to: (Date.today+1))
       expect(current_path).to eq('/spaces/new')
-      # TBD in code review.  Cannot get test to pass.  RSpec/Capybara insists
-      # Space count is going up from 0 to 1 despite test database, when
-      # DatabasCleaner is turned off NOT showing any entry corresponding to the
-      # test case in this test.  Oddly, when DatabaseCleaner is turned off, this
-      # test passes...
+      expect(page).to have_content('Invalid date range!')
     end
 
     xscenario 'date to cannot be before date from date when listing a space' do

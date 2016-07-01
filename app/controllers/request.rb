@@ -7,11 +7,13 @@ class MakersBnB < Sinatra::Base
     end
 
   post '/requests' do
+
     Request.create(start_date: params[:start_date],
                     end_date: params[:end_date],
                     user: current_user,
                     space_id: params[:space_id],
                     confirmed: 0)
+    validate_request_dates(params[:start_date], params[:end_date], params[:space_id])
     redirect('/requests')
   end
 
@@ -20,17 +22,18 @@ class MakersBnB < Sinatra::Base
     erb :'requests/view'
   end
 
-  post '/requests-confirmed/:id' do
-    @active_request = Request.first(id: params[:id])
-    @active_request.confirmed = 2
-    @active_request.save
+  post '/requests/confirm/:id' do
+    Request.first(id: params[:id]).update(confirmed: 2)
+    request = Request.get(params[:id])
+    Booking.create(start_date: request.start_date,
+                   end_date: request.start_date,
+                   user: current_user,
+                   space: request.space)
     redirect('/requests')
   end
 
-  post '/requests-denied/:id' do
-    @active_request = Request.first(id: params[:id])
-    @active_request.confirmed = 1
-    @active_request.save
+  post '/requests/deny/:id' do
+    Request.first(id: params[:id]).update(confirmed: 1)
     redirect('/requests')
   end
 

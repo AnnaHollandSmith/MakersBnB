@@ -18,6 +18,7 @@ class Space
   belongs_to :user
 
   has n, :requests
+  has n, :bookings
 
   def self.upload_photo(filename, file_contents)
     File.open('./app/public/image_uploads/' + filename, "w") do |f|

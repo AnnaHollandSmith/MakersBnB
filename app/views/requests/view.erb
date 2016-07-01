@@ -20,9 +20,15 @@
   			<input type='submit' value='Confirm Request from <%= @active_request.user.email %>'/>
   		</form>
 
-  		<form action='/requests-denied/<%= @active_request.id %>' method='post'>
-  			<input type='submit' value='Deny Request from <%= @active_request.user.email %>'/>
-  		</form>
+		<form action='/requests/confirm/<%= @active_request.id %>' method='post'>
+			<input type='submit' value='Confirm Request from <%= @active_request.user.email %>'/>
+		</form>
+
+		<form action='/requests/deny/<%= @active_request.id %>' method='post'>
+			<input type='submit' value='Deny Request from <%= @active_request.user.email %>'/>
+		</form>
+
+	<% end %>
 
   	<% end %>
   </div>

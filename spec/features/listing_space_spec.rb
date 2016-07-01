@@ -32,7 +32,8 @@ feature 'Listing spaces' do
       expect(page).to have_content("My beautiful home")
       expect(page).to have_content("It has wifi")
       expect(page).to have_content("£100.00")
-      expect(page).to have_content("Available from #{Date.today} to #{Date.today+1}")
+      expect(page).to have_content('Available from 2016-07-10 to 2016-07-20')
+
     end
 
     scenario 'User can upload an image' do

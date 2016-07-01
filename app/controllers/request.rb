@@ -7,12 +7,18 @@ class MakersBnB < Sinatra::Base
     end
 
   post '/requests' do
+    @space = Space.get(params[:space_id])
+    if params[:start_date] > params[:end_date]
+      flash.next[:errors] = ['Invalid date range!']
+      redirect('spaces')
+    else
     Request.create(start_date: params[:start_date],
                     end_date: params[:end_date],
                     user: current_user,
                     space_id: params[:space_id],
                     confirmed: 0)
     redirect('/requests')
+    end
   end
 
   get '/requests/:id' do

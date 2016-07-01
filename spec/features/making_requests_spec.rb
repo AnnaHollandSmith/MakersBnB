@@ -28,4 +28,13 @@ feature 'Making requests' do
     expect(page).to have_content("Requests I've Made")
   end
 
+  scenario 'user cannot make a request outside available dates' do
+    sign_up
+    list_a_space
+    click_button 'Sign out'
+    sign_up(email: 'bob@gmail.com', password: 'password', password_confirmation: 'password')
+    make_invalid_date_selection
+    expect(page).to have_content('Invalid date range!')
+  end
+
 end

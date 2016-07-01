@@ -31,7 +31,7 @@ feature 'Listing spaces' do
       expect(page).to have_content("My beautiful home")
       expect(page).to have_content("It has wifi")
       expect(page).to have_content("£100.00")
-      expect(page).to have_content('Available from 2016-07-20 to 2016-07-27')
+      expect(page).to have_content('Available from 2016-07-10 to 2016-07-20')
     end
 
     xscenario 'date from cannot be in the past when listing a space' do

@@ -32,12 +32,12 @@
     	<label for="date_from">
     		<span class='small-text'>Start Date:</span>
       </label>  
-    	<input class='text-input3' type="date" name="start_date" />
+    	<input class='text-input3' type="date" name="start_date" min="<%= @space.date_from %>" max="<%= @space.date_to %>" required/>
     	
     	<label for="date_to">
     		<span class='small-text'>End Date:</span>
       </label>
-    	<input class='text-input3' type="date" name="end_date" />
+    	<input class='text-input3' type="date" name="end_date" min="<%= @space.date_from %>" max="<%= @space.date_to %>" required/>
       <input type="hidden" name="space_id" value="<%= @space.id %>"/>
       <br>
       <br>

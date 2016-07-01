@@ -22,3 +22,11 @@ def make_request
 	fill_in :end_date, with: Date.new(2016,07,23)
 	click_button 'Request to Book'
 end
+
+
+def validate_space_availability(date_from, date_to, route)
+    if date_from > date_to
+      flash.next[:errors] = ['Invalid date range!']
+      redirect(route)
+    end
+end

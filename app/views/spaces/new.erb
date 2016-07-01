@@ -12,34 +12,42 @@
 
         <form action='/spaces' method='post' enctype="multipart/form-data">
 
-          <label for="name">
+          <label for="name" class="required">
             Name:
             <br>
-            <input class='text-input2'type="text" name="name"/>
+            <input class='text-input2'type="text" name="name" required/>
           </label>
+
           <br>
-          <label for="description">
+
+          <label for="description" class="required">
             Description:
             <br>
-            <textarea class='textarea-input' rows="4" columns="50" name="description"></textarea>
+            <textarea class='textarea-input' rows="4" columns="50" name="description" required></textarea>
           </label>
+
           <br>
-          <label for="description">
+
+          <label for="description" class="required">
             Price:
             <br>
-            <input class='text-input' type="text" name="price" placeholder="£" />
+            <input class='text-input' type="number" name="price" placeholder="£" required />
           </label>
+
           <br>
-          <label for="date_from">
+
+          <label for="date_from" class="required">
             Available From:
             <br>
-            <input class='text-input' type="date" name="date_from" />
+            <input class='text-input' type='date' name='date_from' min="<%= @today %>" required />
           </label>
+
           <br>
-          <label for="date_to">
+
+          <label for="date_to" class="required">
             Available To:
             <br>
-            <input class='text-input' type="date" name="date_to" />
+            <input class='text-input' type='date' name='date_to' min="<%= @tomorrow %>" required />
           </label>
           <br>
 
@@ -56,9 +64,7 @@
 
           <input class='button' type="submit" value="List my Space" />
 
-          <br>
-
-          </form>
+        </form>
 
     </div>
 

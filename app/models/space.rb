@@ -4,6 +4,9 @@ class Space
 
   include DataMapper::Resource
 
+  validates_presence_of :date_from
+  validates_presence_of :date_to
+
   property :id, Serial
   property :name, String, required: true
   property :description, Text, required: true
@@ -11,7 +14,6 @@ class Space
   property :date_from, Date, required: true
   property :date_to, Date, required: true
   property :photo, String
-
 
   belongs_to :user
 

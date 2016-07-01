@@ -18,7 +18,7 @@ feature 'Making requests' do
     sign_up(email: 'bob@gmail.com', password: 'password', password_confirmation: 'password')
     make_request
     expect(current_path).to eq('/requests')
-    expect(page).to have_content("Requests I've Made My beautiful home")
+    expect(page).to have_content("Requests I've Made: My beautiful home")
   end
 
   scenario 'user can see requests without having booked a space' do

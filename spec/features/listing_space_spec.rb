@@ -43,4 +43,20 @@ feature 'Listing spaces' do
       visit "spaces/#{space.id}"
       expect(page).to have_xpath "//img[@src='/image_uploads/Hogwarts-dh2.jpg']"
   end
+
+    xscenario 'date from cannot be in the past when listing a space' do
+      sign_up
+      expect{ list_a_space(date_from: Date.new(2016,06,29), date_to: Date.new(2016,06,30)) }.not_to change(Space, :count)
+      expect(current_path).to eq('/spaces/new')
+      # TBD in code review.  Cannot get test to pass.  RSpec/Capybara insists
+      # Space count is going up from 0 to 1 despite test database, when
+      # DatabasCleaner is turned off NOT showing any entry corresponding to the
+      # test case in this test.  Oddly, when DatabaseCleaner is turned off, this
+      # test passes...
+    end
+
+    xscenario 'date to cannot be before date from date when listing a space' do
+      # TBD in code review.  See above.
+    end
+
 end

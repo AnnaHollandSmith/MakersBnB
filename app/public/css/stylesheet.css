@@ -4,6 +4,8 @@
 
 body {
   background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -39,6 +41,8 @@ h2 {
 	font-size: 25px;
 	border-radius: 5px;
 }
+
+
 
 label {
 	display: block;
@@ -105,10 +109,23 @@ label {
 .request-wrapper {
 	border: 1px #E8E8E8 solid;
 	background-color: white;
-	margin: 10px auto;
-	width: 800px;
+	margin: 10% auto;
+	width: 100%;
 	padding: 10px;
 	box-sizing: border-box;
+	float: left;
+	display: inline;
+}
+
+.request-wrapper-right {
+	border: 1px #E8E8E8 solid;
+	background-color: white;
+	margin: 10% auto;
+	width: 40%;
+	padding: 10px;
+	box-sizing: border-box;
+	float: left;
+	display: inline;
 }
 
 a {
@@ -225,4 +242,45 @@ a {
 
 .image-button {
 	font-size: 15px;
+
+#requests_made_received {
+   position: relative;
+   width: 100%;
+   max-width: 1000px;
+   text-align: center;
+   margin-left: 10%;
+   margin-top: 0%;
+   margin-right: 10%;
+   padding: 40px;
+}
+
+#requests_received {
+    right: 15px;
+    width: 475px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+#requests_made {
+    left: 15px;
+    width: 475px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.requests {
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+}
+
+#confirmation {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  margin-left: 10%;
+  margin-top: 0%;
+  margin-right: 10%;
+  padding: 40px;
 }

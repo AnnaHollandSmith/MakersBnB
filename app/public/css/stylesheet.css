@@ -105,10 +105,23 @@ label {
 .request-wrapper {
 	border: 1px #E8E8E8 solid;
 	background-color: white;
-	margin: 10px auto;
-	width: 800px;
+	margin: 10% auto;
+	width: 40%;
 	padding: 10px;
 	box-sizing: border-box;
+	float: left;
+	display: inline;
+}
+
+.request-wrapper-right {
+	border: 1px #E8E8E8 solid;
+	background-color: white;
+	margin: 10% auto;
+	width: 40%;
+	padding: 10px;
+	box-sizing: border-box;
+	float: left;
+	display: inline;
 }
 
 a {

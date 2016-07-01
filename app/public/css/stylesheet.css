@@ -4,6 +4,8 @@
 
 body {
   background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -106,7 +108,7 @@ label {
 	border: 1px #E8E8E8 solid;
 	background-color: white;
 	margin: 10% auto;
-	width: 40%;
+	width: 100%;
 	padding: 10px;
 	box-sizing: border-box;
 	float: left;
@@ -230,4 +232,34 @@ a {
 .button2:active,
 .button2:focus {
 	background-color: #3e5869;
+}
+
+#requests_made_received {
+   position: relative;
+   width: 100%;
+   max-width: 1000px;
+   align: center;
+   text-align: center;
+   margin: 150px;
+}
+
+#requests_received {
+  position: absolute;
+    right: 0px;
+    width: 425px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+#requests_made {
+  position: absolute;
+    left: 0px;
+    width: 425px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.requests {
+    background-color: white;
+    padding: 20px;
 }

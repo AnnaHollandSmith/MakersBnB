@@ -28,12 +28,16 @@
 
   <% @requests_received.each do | request | %>
     <%= request.space.name %>
-      <form action='/confirmation/<%= request.id %>' method='get'>
-        <input type='submit' value='See this request'>
-      </form>
-		  <%= request.space.date_from %>
-		  <%= request.space.date_to %>
-		  <%= request.approval %>
+    <br>
+		<%= request.space.date_from %>
+    <br>
+		<%= request.space.date_to %>
+    <br>
+		Status:<%= request.approval %>
+    <br>
+    <form action='/confirmation/<%= request.id %>' method='get'>
+      <input type='submit' value='See this request'>
+    </form>
 
   <% end %>
 

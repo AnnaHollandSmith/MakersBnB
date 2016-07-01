@@ -6,7 +6,7 @@ class MakersBnB < Sinatra::Base
                              end_date: params[:end_date],
                              user_id: current_user.id,
                              space_id: params[:space_id],
-                             approval: 'Pending')
+                             approval: 'Not confirmed')
     redirect('/requests')
   end
 
@@ -28,7 +28,5 @@ class MakersBnB < Sinatra::Base
     redirect('/requests')
   end
 
-
-# @current_request = Request.all(space: Space.all(user: current_user))
 
 end

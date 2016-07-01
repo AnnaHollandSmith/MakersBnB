@@ -23,6 +23,7 @@ require 'database_cleaner'
 require './app/models/user'
 require 'helpers/listings'
 require 'helpers/session'
+require 'helpers/requests'
 
 Capybara.app = MakersBnB
 

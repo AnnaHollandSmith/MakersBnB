@@ -11,7 +11,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces' do
-    Space.create(name: params[:name],
+    space = Space.create(name: params[:name],
                          description: params[:description],
                          price: params[:price],
                          user: current_user,
@@ -19,7 +19,7 @@ class MakersBnB < Sinatra::Base
                          date_to: params[:date_to],
                          photo: params[:photo][:filename])
 
-    space.save
+   space.save
    Space.upload_photo(params[:photo][:filename],
                        params[:photo][:tempfile])
 

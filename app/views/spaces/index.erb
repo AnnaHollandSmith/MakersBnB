@@ -7,14 +7,14 @@
   </head>
 
   <body>
-    
+
 
     <h1>Book a Space</h1>
 
     <form class='center-button'action='/spaces/new' method='get'>
       <input class='button' type='submit' value="List a Space">
     </form>
-    
+
       <br>
       <br>
 
@@ -23,6 +23,9 @@
         <div class='space-wrapper'>
           <a id='space-link' href='/spaces/<%= space.id %>'><%= space.name %></a>
           <br>
+          <div class='photos'>
+          <img class='space-photo' src='/image_uploads/small_<%= space.photo %>'>
+        </div>
           <br>
           <%= space.description %>
           <br>

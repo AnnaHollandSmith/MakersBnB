@@ -21,5 +21,12 @@ module Helpers
   def unconfirmed?(request)
   	request.confirmed == 0
   end
+
+  def validate_request_dates(date_from, date_to, space_id)
+    if date_from > date_to
+      flash.next[:errors] = ['Invalid date range!']
+      redirect('/spaces/' + space_id)
+    end
+  end
   
 end

@@ -10,7 +10,7 @@
 
       <div class='form-wrapper2'>
 
-        <form action='/spaces' method='post'>
+        <form action='/spaces' method='post' enctype="multipart/form-data">
 
           <label for="name">
             Name:
@@ -41,12 +41,24 @@
             <br>
             <input class='text-input' type="date" name="date_to" />
           </label>
+          <br>
 
+
+
+          <label for="photo">
+            Upload a photo:
+            <br>
+            <input type="file" name="photo" accept="image/*">
+          </label>
+
+          <br>
           <br>
 
           <input class='button' type="submit" value="List my Space" />
-            
-        </form>
+
+          <br>
+
+          </form>
 
     </div>
 

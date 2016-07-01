@@ -27,10 +27,9 @@
 
   <br>
 
-  Requests I've Received:
+  <h1>Requests I've Received:</h1>
 
   <br>
-
   <% @requests_received.each do | request | %>
     <%= request.space.name %>
     <br>
@@ -43,6 +42,7 @@
     <form action='/confirmation/<%= request.id %>' method='get'>
       <input type='submit' value='See this request'>
     </form>
+	</div>
 
   <% end %>
 

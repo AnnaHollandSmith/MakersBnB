@@ -12,6 +12,7 @@ def list_a_space(name: 'My beautiful home',
   fill_in :price, with: price
   fill_in :date_from, with: date_from
   fill_in :date_to, with: date_to
+	attach_file 'photo', "spec/support/uploads/Hogwarts-dh2.jpg"
   click_button 'List my Space'
 end
 

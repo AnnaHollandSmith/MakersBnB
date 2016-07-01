@@ -5,7 +5,7 @@ class Request
   property :id, Serial
   property :start_date, Date, required: true
   property :end_date, Date, required: true
-  property :approval, String
+  property :confirmed, Integer
 
   belongs_to :user
   belongs_to :space

@@ -1,29 +1,39 @@
 class MakersBnB < Sinatra::Base
 
+  get '/requests' do
+      @requests_made = Request.all(user: current_user)
+      @requests_received = Request.all(space: Space.all(user: current_user))
+      erb :'requests/index'
+    end
+
   post '/requests' do
-    space = Space.get(params[:id])
-    request = Request.create(start_date: params[:start_date],
-                             end_date: params[:end_date],
-                             user_id: current_user.id,
-                             space_id: params[:space_id],
-                             approval: 'Not confirmed')
+    Request.create(start_date: params[:start_date],
+                    end_date: params[:end_date],
+                    user: current_user,
+                    space_id: params[:space_id],
+                    confirmed: 0)
     redirect('/requests')
   end
 
-  get '/requests' do
-    @requests_made = Request.all(user: current_user)
-    @requests_received = Request.all(space: Space.all(user: current_user))
-    erb :'requests/index'
-  end
-
   get '/requests/:id' do
-    @request = Request.get(params[:id])
-    erb :'confirmation/new'
+    @active_request = Request.first(id: params[:id])
+    erb :'requests/view'
   end
 
-  put '/requests/:id' do
-
+  post '/requests-confirmed/:id' do
+    @active_request = Request.first(id: params[:id])
+    @active_request.confirmed = 2
+    @active_request.save
+    redirect('/requests')
   end
+
+  post '/requests-denied/:id' do
+    @active_request = Request.first(id: params[:id])
+    @active_request.confirmed = 1
+    @active_request.save
+    redirect('/requests')
+  end
+
   post '/approve' do
     redirect('/requests')
   end

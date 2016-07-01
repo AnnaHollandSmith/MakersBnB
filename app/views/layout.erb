@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <title>TAARKBnB</title>
       <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" >
+      <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
-  <% if flash[:notice] %>
-  <div id='notice'>
-    <%= flash[:notice] %>
-  </div>
-  <% end %>
-  <% if flash[:errors] && !flash[:errors].empty? %>
-  Please refer to the following errors below:
-  <ul id='errors'>
-    <% flash[:errors].each do |error| %>
-      <li><%= error %></li>
+
+  <ul class='nav-bar'>
+
+
+    <li class='nav-content-left'><a class='nav-link' href='/'>Home</a></li>
+
+    <% if current_user == nil %>
+      <li class='nav-content-left'><a class='nav-link' href="/sessions/new">Login</a></li>
     <% end %>
-  </ul>
-<% end %>
 
     <% if current_user %>
-      Welcome, <%= current_user.email %>
-      <form method='post' action='/sessions'>
+      <li class='nav-content-left'><a class='nav-link' href='/spaces'>Spaces</a></li>
+      <li class='nav-content-left'><a class='nav-link' href='/requests'>Requests</a></li>
+      <li class='nav-content-right'><span class='nav-link'>Hello, <%= current_user.email %></span></li>
+      <li class='nav-content-right'>
+        <form method='post' action='/sessions'>
         <input type='hidden' name='_method' value='delete'>
-        <input type='submit' value='Sign out'>
-      </form>
-    <% end %>
-    <% if current_user == nil %>
-      <a href="/sessions/new">Login</a>
+        <input class='button-link' type='submit' value='Sign out'>
+      </form></li>
+
     <% end %>
 
-    <a href='/requests'>Requests</a>
+  </ul>
+
+  <% if flash[:notice] %>
+    <div id='notice'>
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <% if flash[:errors] && !flash[:errors].empty? %>
+    Please refer to the following errors below:
+    <ul id='errors'>
+      <% flash[:errors].each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
     <%= yield %>
   </body>

@@ -10,15 +10,20 @@
 
 	<br>
 
-	Requests I've Made:
+	<h1>Requests I've Made</h1>
 
 	<br>
 
-  <% @requests_made.each do | request | %>
 
-  <%= request.space.name %>
+  <ul>
+    <% @requests_made.each do | request | %>
+    <div class='request-wrapper'>
+      <h3><%= request.space.name %></h3>
+      Not confirmed
+    </div>
+    <% end %>
+  </ul>
 
-  <% end %>
 
   <br>
 

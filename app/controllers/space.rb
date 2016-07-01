@@ -19,7 +19,6 @@ class MakersBnB < Sinatra::Base
                          date_to: params[:date_to],
                          photo: params[:photo][:filename])
 
-    space.save
    Space.upload_photo(params[:photo][:filename],
                        params[:photo][:tempfile])
 

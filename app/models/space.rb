@@ -13,11 +13,12 @@ class Space
   property :price, Float, required: true
   property :date_from, Date, required: true
   property :date_to, Date, required: true
-  property :photo, String
+  property :photo, String, required: false
 
   belongs_to :user
 
   has n, :requests
+  has n, :bookings
 
   def self.upload_photo(filename, file_contents)
     File.open('./app/public/image_uploads/' + filename, "w") do |f|

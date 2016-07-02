@@ -7,25 +7,26 @@
 </header>
 
 <body>
+  <div id='confirmation'>
+  	<h1>Request for '<%= @active_request.space.name %>'</h1>
+  	<br>
+  	From: <%= @active_request.user.email %>
+  	<br>
+  	Dates: <%= @active_request.start_date %> to <%= @active_request.end_date %>
 
-	<h1>Request for '<%= @active_request.space.name %>'</h1>
-	<br>
-	From: <%= @active_request.user.email %>
-	<br>
-	Dates: <%= @active_request.start_date %> to <%= @active_request.end_date %>
+  	<% if unconfirmed?(@active_request) %>
 
-	<% if unconfirmed?(@active_request) %> 
+  		<form action='/requests/confirm/<%= @active_request.id %>' method='post'>
+  			<input type='submit' value='Confirm Request from <%= @active_request.user.email %>'/>
+  		</form>
 
-		<form action='/requests-confirmed/<%= @active_request.id %>' method='post'>
-			<input type='submit' value='Confirm Request from <%= @active_request.user.email %>'/>
-		</form>
-
-		<form action='/requests-denied/<%= @active_request.id %>' method='post'>
-			<input type='submit' value='Deny Request from <%= @active_request.user.email %>'/>
-		</form>
+  		<form action='/requests/deny/<%= @active_request.id %>' method='post'>
+  			<input type='submit' value='Deny Request from <%= @active_request.user.email %>'/>
+  		</form>
 
 	<% end %>
 
+  </div>
 </body>
 
 

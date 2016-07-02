@@ -19,14 +19,10 @@ class MakersBnB < Sinatra::Base
                          date_to: params[:date_to],
                          photo: params[:photo][:filename])
 
-   space.save
-   Space.upload_photo(params[:photo][:filename],
+    validate_space_availability(params[:date_from], params[:date_to], '/spaces/new')
+    Space.upload_photo(params[:photo][:filename],
                        params[:photo][:tempfile])
-
-
-
     redirect to('/spaces')
-    # Check whether @space or space necessary?
   end
 
   get '/spaces/:id' do

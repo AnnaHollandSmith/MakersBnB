@@ -5,10 +5,12 @@
 </head>
 
 <body>
-	  <h1>Requests</h1>
 
   <div id='requests_made_received'>
-		<div class='request_title_holder' id='made_holder'>
+
+
+
+    <div class='request_title_holder' id='made_holder'>
       <h3>Requests I've Made:</h3>
       <div id='requests_made' class='requests'>
       	<br>
@@ -23,7 +25,8 @@
 						<br>
             From <%= request.start_date %> to <%= request.end_date %>
             <br>
-            Status: <%= get_request_status(request.confirmed) %>
+            <li class='status'> Status: <%= get_request_status(request.confirmed) %>
+						</li>
           </div>
           <% end %>
         </ul>
@@ -45,7 +48,9 @@
 						<br>
       		  From <%= request.start_date %> to <%= request.end_date %>
             <br>
+						<li class='status'>
       		  Status: <%= get_request_status(request.confirmed) %>
+					</li>
             <br>
             <form action='/requests/<%= request.id %>' method='get'>
                <input class='small-button' type='submit' value='See this Request'>

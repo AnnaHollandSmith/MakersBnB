@@ -349,6 +349,10 @@ a {
   margin-top: 0%;
   margin-right: 10%;
   padding: 40px;
+	border: 1px #e57373 solid;
+	background-color: white;
+	border-radius: 5px;
+	font-size: 25px;
 }
 
 
@@ -358,7 +362,6 @@ a {
   top: 0; bottom:0; left: 0; right:0;
   margin: auto;
 }
-
 
 .errors{
 	text-align: center;
@@ -373,4 +376,25 @@ a {
 
 .description{
 	float: left;
+}
+
+.status {
+	color: #81c784;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.button-deny {
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	padding: 5px 8px;
+	background-color: #e57373;
+	color: white;
+	border-radius: 8px;
+}
+
+.button-deny:hover,
+.button-deny:active,
+.button-deny:focus {
+	background-color: #b2405d;
 }

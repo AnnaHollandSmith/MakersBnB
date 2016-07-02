@@ -5,14 +5,10 @@
 </head>
 
 <body>
-
-	<br>
+	  <h1>Requests</h1>
 
   <div id='requests_made_received'>
-    <h1>Requests</h1>
-
-
-    <div class='request_title_holder' id='made_holder'>
+		<div class='request_title_holder' id='made_holder'>
       <h3>Requests I've Made:</h3>
       <div id='requests_made' class='requests'>
       	<br>
@@ -21,6 +17,10 @@
           <div class='request-wrapper'>
             <a id='space-link' href='/spaces/<%= request.space.id %>'><%= request.space.name %></a>
             <br>
+						<br>
+						<img class='space-photo' src='/image_uploads/small_<%= request.space.photo %>'>
+						<br>
+						<br>
             From <%= request.start_date %> to <%= request.end_date %>
             <br>
             Status: <%= get_request_status(request.confirmed) %>
@@ -39,12 +39,16 @@
         	<div class='request-wrapper'>
             <a id='space-link' href='/spaces/<%= request.space.id %>'><%= request.space.name %></a>
             <br>
+						<br>
+						<img class='space-photo' src='/image_uploads/small_<%= request.space.photo %>'>
+						<br>
+						<br>
       		  From <%= request.start_date %> to <%= request.end_date %>
             <br>
       		  Status: <%= get_request_status(request.confirmed) %>
             <br>
             <form action='/requests/<%= request.id %>' method='get'>
-               <input type='submit' value='See this Request'>
+               <input class='small-button' type='submit' value='See this Request'>
             </form>
       	  </div>
         <% end %>

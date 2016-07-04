@@ -1,5 +1,7 @@
 ## MakersBnB
 
+https://taark-bnb.herokuapp.com
+
 [![Build Status](https://travis-ci.org/riyapabari/MakersBnB.svg?branch=master)](https://travis-ci.org/riyapabari/MakersBnB) [![Coverage Status](https://coveralls.io/repos/github/riyapabari/MakersBnB/badge.svg?branch=master)](https://coveralls.io/github/riyapabari/MakersBnB?branch=master)
 
 A web application that allows users to list spaces they have available, and to hire spaces for the night.
@@ -63,7 +65,3 @@ So that I can see all available spaces
 I can still book spaces that have an unapproved booking request
 ```
 
-#Additional tests to be added
-```
-
-```

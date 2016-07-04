@@ -11,53 +11,59 @@
       <div class='form-wrapper2'>
 
         <form action='/spaces' method='post' enctype="multipart/form-data">
-
-          <label for="name" class="required">
+          <div class='required'>
+          <label for="name" >
             Name:
             <br>
             <input class='text-input2'type="text" name="name" required/>
           </label>
+        </div>
 
           <br>
-
+          <div class='required'>
           <label for="description" class="required">
             Description:
             <br>
             <textarea class='textarea-input' rows="4" columns="50" name="description" required></textarea>
           </label>
+        </div>
 
           <br>
-
+          <div class='required'>
           <label for="description" class="required">
             Price:
             <br>
             <input class='text-input' type="number" name="price" placeholder="£" required />
           </label>
+        </div>
 
           <br>
-
+          <div class='required'>
           <label for="date_from" class="required">
             Available From:
             <br>
             <input class='text-input' id="date_from" type='date' name='date_from' min="<%= @today %>" required />
           </label>
+        </div>
 
           <br>
-
+          <div class='required'>
           <label for="date_to" class="required">
             Available To:
             <br>
             <input class='text-input' id="date_to" type='date' name='date_to' min="<%= @tomorrow %>" required />
           </label>
+        </div>
           <br>
 
 
-
+          <div class='required'>
           <label for="photo">
             Upload a photo:
             <br>
             <input type="file" name="photo" accept="image/*">
           </label>
+        </div>
 
           <br>
           <br>

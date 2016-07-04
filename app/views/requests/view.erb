@@ -13,15 +13,19 @@
   	From: <%= @active_request.user.email %>
   	<br>
   	Dates: <%= @active_request.start_date %> to <%= @active_request.end_date %>
+		<br>
+		<br>
 
   	<% if unconfirmed?(@active_request) %>
 
   		<form action='/requests/confirm/<%= @active_request.id %>' method='post'>
-  			<input type='submit' value='Confirm Request from <%= @active_request.user.email %>'/>
+  			<input class='button' type='submit' value='Confirm Request from <%= @active_request.user.email %>'/>
   		</form>
+			<br>
+			<br>
 
   		<form action='/requests/deny/<%= @active_request.id %>' method='post'>
-  			<input type='submit' value='Deny Request from <%= @active_request.user.email %>'/>
+  			<input class='button' type='submit' value='Deny Request from <%= @active_request.user.email %>'/>
   		</form>
 
 	<% end %>

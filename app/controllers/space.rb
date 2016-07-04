@@ -11,13 +11,14 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces' do
-    Space.create(name: params[:name],
+    space = Space.create(name: params[:name],
                          description: params[:description],
                          price: params[:price],
                          user: current_user,
                          date_from: params[:date_from],
                          date_to: params[:date_to],
                          photo: params[:photo][:filename])
+
     validate_space_availability(params[:date_from], params[:date_to], '/spaces/new')
     Space.upload_photo(params[:photo][:filename],
                        params[:photo][:tempfile])

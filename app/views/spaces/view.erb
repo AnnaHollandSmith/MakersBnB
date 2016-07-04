@@ -8,12 +8,13 @@
 
 <body>
 
-    <h1>
-      <%= @space.name %>
-			 <img src='/image_uploads/<%= @space.photo %>'>
-    </h1>
+    <h1><%= @space.name %></h1>
+		<br>
+
 
     <div class='space-view'>
+
+			<img class='listing-image' src='/image_uploads/<%= @space.photo %>'>
 
       <span class='bold-text'>Price per night:</span>
       <br>
@@ -32,7 +33,7 @@
 
     	<label for="date_from">
     		<span class='small-text'>Start Date:</span>
-      </label>  
+      </label>
     	<input class='text-input3' id='date_from' type="date" name="start_date" min="<%= @space.date_from %>" max="<%= @space.date_to %>" required/>
     	<label for="date_to">
     		<span class='small-text'>End Date:</span>

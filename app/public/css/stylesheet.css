@@ -130,9 +130,11 @@ label {
 	border: 1px #E8E8E8 solid;
 	background-color: white;
 	margin: 10px auto;
-	width: 800px;
+	width: 600px;
 	padding: 10px;
+	text-align: center;
 	box-sizing: border-box;
+	font-size: 20px;
 }
 
 .request-wrapper {
@@ -357,9 +359,6 @@ a {
   margin: auto;
 }
 
-.photos {
-	text-align: right;
-}
 
 .errors{
 	text-align: center;
@@ -370,5 +369,8 @@ a {
 	margin-right: 36%;
 	padding: 10px;
 	font-size: 25px;
+}
 
+.description{
+	float: left;
 }
